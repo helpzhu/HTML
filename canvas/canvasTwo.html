@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style>
+        canvas{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="300" height="300"></canvas>
+    <script>
+        (function () {
+            var myCanvas = document.getElementById("myCanvas");
+            if (myCanvas.getContext) {
+                var ctx = myCanvas.getContext("2d");
+
+                // 设置起始路径
+                ctx.beginPath();
+                // 绘制一个圆形
+                ctx.arc(100,70,60,0,Math.PI*2,true);
+                // 移动路径到画布中指定的点，不创建线条
+                ctx.moveTo(130,70);
+                ctx.arc(100,70,30,0,Math.PI,false);
+                ctx.moveTo(95,45);
+                ctx.arc(115,45,5,0,Math.PI*2,true);
+                ctx.moveTo(85,45);
+                ctx.arc(90,45,5,0,Math.PI*2,true);
+                ctx.moveTo(102,50);
+                ctx.lineTo(102,65);
+                ctx.moveTo(102,65);
+                ctx.lineTo(110,65);
+                // 绘制定义好的路径
+                ctx.stroke();
+            }
+        })();
+    </script>
+</body>
+</html>

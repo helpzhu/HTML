@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>globalAlphaCanvas</title>
+</head>
+<body>
+    <div style="width: 300px; height: 300px; margin: 25px auto; border: 0px solid black;">
+
+        <canvas id="canvas" width="300" height="300"></canvas>
+        
+        <script>
+
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            //var offset = 0;
+
+            function dram() {
+
+                //ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
+                // 画背景
+                ctx.fillStyle = "#000000";
+                ctx.fillRect(0,0,150,3000);
+                ctx.fillStyle = "#FF0000";
+                ctx.fillRect(150,0,150,3000);
+                //ctx.fillStyle = "#000000";
+                ctx.fillStyle = "#FFF";
+
+                // 设置透明度
+                ctx.globalAlpha = 0.2;
+
+                // 画圆
+                for (var i = 1; i<= 10; i++) {
+                    ctx.beginPath();
+                    ctx.arc(150,150,14.7*i,0,Math.PI*2,true);
+                    ctx.fill();
+                    //ctx.stroke();
+                }
+
+            }
+
+            /*function march() {
+                offset++;
+                if (offset > 10) {
+                    offset = 0;
+                }
+                dram();
+                setTimeout(march,200);
+            }*/
+
+            //march();
+            dram();
+
+        </script>
+        
+    </div>
+</body>
+</html>
