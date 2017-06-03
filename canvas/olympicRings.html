@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style>
+        .divStyle {
+            width: 250px;
+            height: 150px;
+            margin: 250px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="divStyle">
+        <canvas id="myCanvas" width="220" height="110">
+            您的浏览器不支持canvas.
+        </canvas>
+        <script>
+            (function() {
+                var myCanvas = document.getElementById("myCanvas");
+                var ctx = myCanvas.getContext("2d");
+                myCanvas.getCon
+
+                // 设置圆形的宽度
+                ctx.lineWidth = 5;
+
+                // 绘制第一个圆形
+                ctx.beginPath();
+                ctx.strokeStyle = "rgba(0,255,255,1)";
+                ctx.fillStyle = "rgba(0,255,255,1)";
+                ctx.arc(40, 40, 30, 0, Math.PI * 2, true);
+                ctx.stroke();
+
+                // 绘制第二个圆形
+                ctx.beginPath();
+                ctx.strokeStyle = "rgba(0,0,0,1)";
+                ctx.fillStyle = "rgba(0,0,0,1)";
+                ctx.arc(110, 40, 30, 0, Math.PI * 2, true);
+                ctx.stroke();
+
+                // 绘制第三个圆形
+                ctx.beginPath();
+                ctx.strokeStyle = "rgba(255,0,0,1)";
+                ctx.fillStyle = "rgba(255,0,0,1)";
+                ctx.arc(180, 40, 30, 0, Math.PI * 2, true);
+                ctx.stroke();
+
+                // 绘制第四个圆形
+                ctx.beginPath();
+                ctx.strokeStyle = "rgba(255,255,0,1)";
+                ctx.fillStyle = "rgba(255,255,0,1)";
+                ctx.arc(75, 68, 30, 0, Math.PI * 2, true);
+                ctx.stroke();
+
+                // 绘制第五个圆形
+                ctx.beginPath();
+                ctx.strokeStyle = "rgba(0,255,0,1)";
+                ctx.fillStyle = "rgba(0,255,0,1)";
+                ctx.arc(145, 68, 30, 0, Math.PI * 2, true);
+                ctx.stroke();
+            })();
+        </script>
+    </div>
+</body>
+
+</html>
