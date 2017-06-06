@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>File对象与FileList对象</title>
+</head>
+
+<body>
+  <script>
+    function showFileName() {
+      var file;
+      for (var i = 0; i < document.getElementById("file").files.length; i++) {
+        // file对象为用户选择的单个文件
+        file = document.getElementById("file").files[i];
+        alert(file.name);
+      }
+    }
+  </script>
+  选择文件：<input type="file" id="file" multiple size="80" />
+  <input type="button" onclick="showFileName();" value="文件上传" />
+</body>
+
+</html>
